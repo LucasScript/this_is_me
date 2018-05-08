@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = function buildPdf(input, output) {
   let html = fs.readFileSync(input, 'utf8');
   let bootstrap = fs.readFileSync(path.join(__dirname, '../vendors/bootstrap/css/bootstrap.css'), 'utf8');
-  let fontawesome = fs.readFileSync(path.join(__dirname, '../vendors/fontawesome/fontawesome-all.css'), 'utf8');
+  let fontawesome = fs.readFileSync(path.join(__dirname, '../vendors/fontawesome/css/fontawesome-all.css'), 'utf8');
   let index = fs.readFileSync(path.join(__dirname, '../assets/index.css'), 'utf8');
   const outputDir = __dirname + '/../../dest';
 

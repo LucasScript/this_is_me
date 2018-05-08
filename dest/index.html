@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>{{title}} cv project</title>
+    <title>Gysbert Lucas Olivier cv project</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./fontawesome/css/fontawesome-all.css">
@@ -54,57 +54,79 @@
             <div class="left-column">
 
                 <div class="summary">
-                    {{#each summary}}
                     <h4 class="text-wrap">
                         <i class="fas fa-suitcase"></i>
-                        {{ @key }}</h4>
-                    <p class="">{{{ this }}}</p>
-                    {{/each}}
+                        Professional Summary</h4>
+                    <p class="">This is how awesome I am.</p>
                 </div>
 
                 <div class="experience">
-                    {{#each experience}}
-                    <div class="text-wrap">{{ @key }}</div>
+                    <div class="text-wrap">Employment history</div>
                     <div class="">
-                        {{#each this}}
-                        <div class="">Place: {{ this.place }}</div>
-                        {{#if this.position}}
-                        <div class="">Position: {{ this.position }}</div>
-                        {{/if}} {{#if this.type}}
-                        <div class="">Type: {{ this.type }}</div>
-                        {{/if}} {{#if this.degree}}
-                        <div class="">Degree: {{ this.degree }}</div>
-                        {{/if}}
-                        <div class="">Time: {{ this.time }}</div>
-                        <div class="">Description: {{ this.description }}</div>
-                        {{/each}}
+                        <div class="">Place: Investec</div>
+                        <div class="">Position: Software Developer</div>
+                                                  <div class="">Time: January 2014 - Present</div>
+                        <div class="">Description: First 2 + years worked on Java/Xml systems 2+ years moved to Javascript/Angular/node.js systems</div>
+                        <div class="">Place: FOXit(Pty) LTD</div>
+                        <div class="">Position: Intern Developer</div>
+                                                  <div class="">Time: November 2012 - December 2012</div>
+                        <div class="">Description: Windows 8 application development</div>
+                        <div class="">Place: Scadco</div>
+                        <div class="">Position: Project Assistant</div>
+                                                  <div class="">Time: July 2011 - July 2011</div>
+                        <div class="">Description: Assisting in Setting up computers and networks in schools</div>
                     </div>
-                    {{/each}}
+                    <div class="text-wrap">Education</div>
+                    <div class="">
+                        <div class="">Place: North-West University</div>
+ 
+                        <div class="">Type: Honors Bachelor of Science(BSc)</div>
+                         
+                        <div class="">Degree: Computer Science and Information Systems</div>
+                        <div class="">Time: 2013</div>
+                        <div class="">Description: I need to fill the area with some wonderful words</div>
+                        <div class="">Place: North-West University</div>
+ 
+                        <div class="">Type: Bachelor of Science(BSc)</div>
+                         
+                        <div class="">Degree: Information Technology</div>
+                        <div class="">Time: 2010 - 2012</div>
+                        <div class="">Description: List of all the amazing stuff i wish i did</div>
+                        <div class="">Place: High School Ben Vorster</div>
+ 
+                        <div class="">Type: National senior certificate</div>
+                                                 <div class="">Time: 2005 - 2009</div>
+                        <div class="">Description: Who could remember all the fun we had in high school</div>
+                    </div>
 
                 </div>
             </div>
             <div class="right-column">
                 <div class="details">
-                    {{#each details}}
-                    <div class="text-wrap label uppercase">{{ @key }}</div>
+                    <div class="text-wrap label uppercase">details</div>
                     <div>
-                        {{#each this}}
-                        <div class="">{{{ this }}}</div>
-                        {{/each}}
+                        <div class="">Sandton, 2191, South Africa</div>
+                        <div class="">+27718951225</div>
+                        <div class="">lucasoli4@gmail.com</div>
                     </div>
-                    {{/each}}
+                    <div class="text-wrap label uppercase">Date/Place of Birth</div>
+                    <div>
+                        <div class="">1991-01-30 / South Africa</div>
+                    </div>
+                    <div class="text-wrap label uppercase">Nationality</div>
+                    <div>
+                        <div class="">South African</div>
+                    </div>
                 </div>
                 <div class="social">
                     <p>Social Profiles</p>
-                    {{#each social}} {{#each this}}
-                    <a class="text-wrap label uppercase" href="{{this}}">{{ @key }}</a>
-                    {{/each}} {{/each}}
+                     
+                    <a class="text-wrap label uppercase" href="https://github.com/LucasScript">github</a>
+                      
+                    <a class="text-wrap label uppercase" href="https://www.linkedin.com/in/LucasOli4">linkedin</a>
+                     
                 </div>
                 <div class="other">
-                    {{#each other}}
-                    <div class="text-wrap label uppercase">{{ @key }}</div>
-                    <div class="">{{{ this }}}</div>
-                    {{/each}}
                 </div>
             </div>
         </div>

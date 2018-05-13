@@ -53,38 +53,57 @@
         <div class="row">
             <div class="left-column">
 
-                <div class="summary">
-                    {{#each summary}}
+                <div class="category">
+                    {{#each profile}}
                     <h4 class="text-wrap">
-                        <i class="fas fa-suitcase"></i>
-                        {{ @key }}</h4>
-                    <p class="">{{{ this }}}</p>
+                        <i class="fas fa-user"></i>
+                        {{ @key }}
+                    </h4>
+                    <div class="section">
+                        <p>
+                            {{ this }}
+                        </p>
+                    </div>
                     {{/each}}
                 </div>
 
-                <div class="experience">
-                    {{#each experience}}
-                    <div class="text-wrap">{{ @key }}</div>
-                    <div class="">
-                        {{#each this}}
-                        <div class="">Place: {{ this.place }}</div>
-                        {{#if this.position}}
-                        <div class="">Position: {{ this.position }}</div>
-                        {{/if}} {{#if this.type}}
-                        <div class="">Type: {{ this.type }}</div>
-                        {{/if}} {{#if this.degree}}
-                        <div class="">Degree: {{ this.degree }}</div>
-                        {{/if}}
-                        <div class="">Time: {{ this.time }}</div>
-                        <div class="">Description: {{ this.description }}</div>
-                        {{/each}}
+                <div class="category">
+                    <h4 class="text-wrap">
+                        <i class="fas fa-suitcase"></i>
+                        Employment
+                    </h4>
+                    {{#each employment}}
+                    <div class="section">
+                        <h5 class="m-0 p-0">
+                            <strong>{{ this.position }}</strong> at {{ this.place }}
+                        </h5>
+                        <span class="time">{{ this.time }}</span>
+                        <div>{{ this.description }}</div>
                     </div>
                     {{/each}}
+                </div>
 
+                <div class="category">
+                    <h4 class="text-wrap">
+                        <i class="fas fa-graduation-cap"></i>
+                        Education
+                    </h4>
+                    {{#each education}}
+                    <div class="section">
+                        <h5 class="m-0 p-0">
+                            <strong>{{ this.type }} {{#if this.degree}}
+                                <span>in</span>
+                                {{/if}} {{ this.degree }}
+                            </strong> at {{ this.place }}
+                        </h5>
+                        <span class="time">{{ this.time }}</span>
+                        <div> {{ this.description }}</div>
+                    </div>
+                    {{/each}}
                 </div>
             </div>
             <div class="right-column">
-                <div class="details">
+                <div class="section details">
                     {{#each details}}
                     <div class="text-wrap label uppercase">{{ @key }}</div>
                     <div>
@@ -94,16 +113,35 @@
                     </div>
                     {{/each}}
                 </div>
-                <div class="social">
-                    <p>Social Profiles</p>
+                <div class="section social">
                     {{#each social}} {{#each this}}
                     <a class="text-wrap label uppercase" href="{{this}}">{{ @key }}</a>
                     {{/each}} {{/each}}
                 </div>
-                <div class="other">
-                    {{#each other}}
-                    <div class="text-wrap label uppercase">{{ @key }}</div>
-                    <div class="">{{{ this }}}</div>
+                <div class="section languages">
+                    <p class="label uppercase">Languages</p>
+                    {{#each languages}}
+                    <div class="text-wrap label">{{ this.name }}</div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: {{this.rating}}%" aria-valuenow="{{this.rating}}" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                    {{/each}}
+                </div>
+                <div class="section skills">
+                    <p class="label uppercase">Skills</p>
+                    {{#each skills}}
+                    <div class="label">{{ this }}</div>
+                    {{/each}}
+                </div>
+                <div class="section tech">
+                    <p class="label uppercase">Tech</p>
+                    {{#each tech}}
+                    <div class="text-wrap label">{{ this.name }}</div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: {{this.rating}}%" aria-valuenow="{{this.rating}}" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
                     {{/each}}
                 </div>
             </div>

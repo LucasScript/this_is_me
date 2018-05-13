@@ -1,5 +1,6 @@
 .page {
     /* max-width: 1250px; */
+    color: #555;
 }
 
 .heading {}
@@ -13,25 +14,57 @@
     font-size: 60%;
 }
 
-.left-column {
-    width: 70%;
-}
-
 .right-column {
     width: 30%;
-    padding-left: 1rem;
-    border-left: 1px solid #777;
     position: absolute;
     top: 10rem;
     left: 70%;
 }
 
+.right-column .section {
+    padding-left: 1rem;
+    border-left: 2px solid #777;
+    margin-bottom: 0.5rem;
+}
+
+.progress {
+    height: 0.25rem;
+    width: 95%;
+}
+
 .label {
-    color: #666
+    color: #666;
+}
+
+p.label {
+    padding: 0;
+    margin: 0;
 }
 
 .uppercase {
     text-transform: uppercase;
+}
+
+.left-column {
+    width: 70%;
+}
+
+.category .section {
+    border-left: 2px solid #777;
+    padding-left: 2rem;
+    margin-left: 0.7rem;
+}
+
+.category {}
+
+.category h4>.fas {
+    margin-right: 0.5rem;
+}
+
+.category .time {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: blue;
 }
 
 @media print {

@@ -12,7 +12,9 @@ fs.emptyDirSync(outputDir);
 
 // Copy assets
 fs.copySync(srcDir + '/assets', outputDir);
-fs.copySync(srcDir + '/vendors', outputDir);
+fs.copySync(srcDir + '/vendors/bootstrap', outputDir + '/bootstrap');
+fs.copySync(srcDir + '/vendors/fontawesome', outputDir + '/fontawesome');
+fs.copySync(srcDir + '/vendors/fontawesome/webfonts', outputDir + '/webfonts');
 
 // Build HTML
 handlebars.registerHelper('markdown', markdownHelper);
@@ -23,4 +25,3 @@ fs.writeFileSync(outputDir + '/index.html', html);
 
 // Build PDF
 buildPdf(outputDir + '/index.html', outputDir + '/cv.pdf');
-

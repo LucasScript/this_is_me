@@ -8,11 +8,22 @@ module.exports = buildPdf = async (input, output) => {
     outputPath: output,
     templatePath: path.join(__dirname, '../../dest'),
     include: [
-      path.join(__dirname, '../assets'),
-      path.join(__dirname, '../assets/index.css'),
-      path.join(__dirname, '../vendors/fontawesome/css/fontawesome-all.css'),
       path.join(__dirname, '../vendors/bootstrap/css/bootstrap.css'),
+      path.join(__dirname, '../vendors/fontawesome/css/fontawesome-all.css'),
+      path.join(__dirname, '../assets/favicon.ico'),
+      path.join(__dirname, '../assets/index.css'),
     ],
+    renderDelay: 5000,
+    pdf: {
+      format: 'A4',
+      margin: {
+        top: '4cm',
+        right: '1cm',
+        bottom: '1cm',
+        left: '1cm',
+      },
+    },
+    scale: 2,
   });
 
   await html5ToPDF.start();

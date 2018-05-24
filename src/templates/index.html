@@ -12,6 +12,7 @@
 
 <body>
     <div class="container page">
+        {{#if pdf}} {{else}}
         <a href="https://github.com/LucasScript/cv-project" class="github-corner screen" aria-label="View source on Github">
             <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#deeef9; color:#fff; position: absolute; top: 0; border: 0; right: 0;"
                 aria-hidden="true">
@@ -22,22 +23,28 @@
                     fill="currentColor" class="octo-body"></path>
             </svg>
         </a>
+        {{/if}}
 
-        <div class="top">
+        <div class="top mt-2">
             <h2 class="m-0 heading">
-                <img src="./favicon.ico" class="rounded-circle float-left"> Gysbert Lucas Olivier
-                <p class="sub-heading">Software craftsman
+                <img src="./lucas_profile_pic.ico" class="rounded-circle float-left" style="width: 10rem;position: absolute;margin-right: 1rem;">
+                <span style="padding-left: 10rem;">Gysbert Lucas Olivier</span>
+                <p class="sub-heading">Software Craftsman
                     <br/>
                     <time datetime="" class="text-muted">Last update: Tue May 08 2018 20:46:54 GMT+0200 (South Africa Standard Time)</time>
-                    <br/>
-                    <span class="screen">
-                        <link href="./cv.pdf">
-                            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>Download PDF version</link>
-                    </span>
+                    <br/> {{#if pdf}}
                     <span class="print">The online version is available at
-                        <link href="http://LucasScript.github.io/my-cv-repo">
-                            <i class="fa fa-github" aria-hidden="true"></i>http://LucasScript.github.io/my-cv-repo</link>
+                        <br/>
+                        <a href="http://LucasScript.github.io/my-cv-repo">
+                            <i class="fab fa-github" aria-hidden="true"></i>http://LucasScript.github.io/my-cv-repo
+                        </a>
                     </span>
+                    {{else}}
+                    <span class="screen">
+                        <a href="./cv.pdf">
+                            <i class="fa fa-file-pdf-o" aria-hidden="true"></i>Download PDF version</a>
+                    </span>
+                    {{/if}}
                 </p>
             </h2>
         </div>
@@ -51,9 +58,7 @@
                         {{ @key }}
                     </h4>
                     <div class="section">
-                        <p>
-                            {{ this }}
-                        </p>
+                        <p style="white-space: pre-line;">{{ this }}</p>
                     </div>
                     {{/each}}
                 </div>
@@ -69,13 +74,13 @@
                             <strong>{{ this.position }}</strong> at {{ this.place }}
                         </h5>
                         <span class="time">{{ this.time }}</span>
-                        <div>{{ this.description }}</div>
+                        <p style="white-space: pre-line;">{{ this.description }}</p>
                     </div>
                     {{/each}}
                 </div>
 
                 <div class="category">
-                    <h4 class="text-wrap">
+                    <h4 class="text-wrap" style="margin-left: -4px;">
                         <i class="fas fa-graduation-cap"></i>
                         Education
                     </h4>
@@ -88,51 +93,62 @@
                             </strong> at {{ this.place }}
                         </h5>
                         <span class="time">{{ this.time }}</span>
-                        <div> {{ this.description }}</div>
+                        <p style="white-space: pre-line;"> {{ this.description }}</p>
                     </div>
                     {{/each}}
+                </div>
+                <div class="category">
+                    <h4 class="text-wrap" style="margin-left: -4px;">
+                        <i class="fas fa-graduation-cap"></i>
+                        References
+                    </h4>
+                    <div class="section">
+                        <p style="white-space: pre-line;"> {{ References }}</p>
+                    </div>
                 </div>
             </div>
             <div class="right-column">
                 <div class="section details">
                     {{#each details}}
                     <div class="text-wrap label uppercase">{{ @key }}</div>
-                    <div>
+                    <div style="padding-bottom: 15px;">
                         {{#each this}}
                         <div class="">{{{ this }}}</div>
                         {{/each}}
                     </div>
                     {{/each}}
                 </div>
-                <div class="section social">
+                <div class="section social" style="padding-bottom: 15px;">
                     {{#each social}} {{#each this}}
-                    <link class="text-wrap label uppercase" href="{{this}}">{{ @key }}</link>
+                    <link class="text-wrap label uppercase" href="{{this}}">
+                    <span class="uppercase">{{ @key }}</span>
+                    </link>
                     {{/each}} {{/each}}
                 </div>
                 <div class="section languages">
                     <p class="label uppercase">Languages</p>
                     {{#each languages}}
                     <div class="text-wrap label">{{ this.name }}</div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: {{this.rating}}%" aria-valuenow="{{this.rating}}" aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                    </div>
+                    <progress value="{{this.rating}}" max="100"></progress>
                     {{/each}}
                 </div>
-                <div class="section skills">
+                <div class="section skills" style="padding-bottom: 15px;">
                     <p class="label uppercase">Skills</p>
                     {{#each skills}}
                     <div class="label">{{ this }}</div>
                     {{/each}}
                 </div>
-                <div class="section tech">
+                <div class="section tech" style="padding-bottom: 15px;">
                     <p class="label uppercase">Tech</p>
                     {{#each tech}}
                     <div class="text-wrap label">{{ this.name }}</div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" style="width: {{this.rating}}%" aria-valuenow="{{this.rating}}" aria-valuemin="0"
-                            aria-valuemax="100"></div>
-                    </div>
+                    <progress value="{{this.rating}}" max="100"></progress>
+                    {{/each}}
+                </div>
+                <div class="section hobbies" style="padding-bottom: 15px;">
+                    <p class="label uppercase">Hobbies</p>
+                    {{#each hobbies}}
+                    <div class="label">{{ this }}</div>
                     {{/each}}
                 </div>
             </div>

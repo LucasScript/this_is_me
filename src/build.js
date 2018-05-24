@@ -20,8 +20,12 @@ fs.copySync(srcDir + '/vendors/fontawesome/webfonts', outputDir + '/webfonts');
 handlebars.registerHelper('markdown', markdownHelper);
 const source = fs.readFileSync(srcDir + '/templates/index.html', 'utf-8');
 const template = handlebars.compile(source);
-const html = template(templateData);
+const htmlData = Object.assign(templateData, { pdf: false });
+const html = template(htmlData);
 fs.writeFileSync(outputDir + '/index.html', html);
 
 // Build PDF
-buildPdf(outputDir + '/index.html', outputDir + '/cv.pdf');
+const pdfData = Object.assign(templateData, { pdf: true });
+const pdfHtml = template(pdfData);
+fs.writeFileSync(outputDir + '/pdfHtml.html', pdfHtml);
+buildPdf(outputDir + '/pdfHtml.html', outputDir + '/cv.pdf');

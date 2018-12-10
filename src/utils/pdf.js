@@ -16,12 +16,12 @@ module.exports = buildPdf = async (input, output) => {
     renderDelay: 5000,
     pdf: {
       format: 'A4',
-      margin: {
-        top: '4cm',
-        right: '1cm',
-        bottom: '1cm',
-        left: '1cm',
-      },
+      // margin: {
+      //   top: '4cm',
+      //   right: '1cm',
+      //   bottom: '1cm',
+      //   left: '1cm',
+      // },
     },
     scale: 2,
   });

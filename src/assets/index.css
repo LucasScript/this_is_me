@@ -1,6 +1,6 @@
 .page {
     /* max-width: 1250px; */
-    color: #555;
+    color: #333;
     position: relative;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -23,30 +23,96 @@
     font-size: 60%;
 }
 
-.right-column {
-    width: 30%;
-    position: absolute;
-    top: 30px;
-    left: 80%;
-}
-
 .right-column .section {
     padding-left: 10px;
-    border-left: 2px solid #777;
+    border-left: 2px solid #555;
     margin-bottom: 5px;
 }
 
-.progress {
-    height: 3px;
-    width: 95%;
-}
-
 .label {
-    color: #666;
+    color: #333;
 }
 
-progress[value] {
-    height: 3px;
+.progressbar {
+    border-bottom: 3px solid #2DC3FF;
+    width: 0px;
+    border-radius: 50px;
+}
+
+.progressbar.width-5 {
+    width: 20px;
+}
+
+.progressbar.width-10 {
+    width: 30px;
+}
+
+.progressbar.width-15 {
+    width: 40px;
+}
+
+.progressbar.width-20 {
+    width: 50px;
+}
+
+.progressbar.width-25 {
+    width: 60px;
+}
+
+.progressbar.width-35 {
+    width: 70px;
+}
+
+.progressbar.width-40 {
+    width: 80px;
+}
+
+.progressbar.width-45 {
+    width: 90px;
+}
+
+.progressbar.width-50 {
+    width: 100px;
+}
+
+.progressbar.width-55 {
+    width: 110px;
+}
+
+.progressbar.width-60 {
+    width: 120px;
+}
+
+.progressbar.width-65 {
+    width: 130px;
+}
+
+.progressbar.width-70 {
+    width: 140px;
+}
+
+.progressbar.width-75 {
+    width: 150px;
+}
+
+.progressbar.width-80 {
+    width: 160px;
+}
+
+.progressbar.width-85 {
+    width: 170px;
+}
+
+.progressbar.width-90 {
+    width: 180px;
+}
+
+.progressbar.width-95 {
+    width: 190px;
+}
+
+.progressbar.width-100 {
+    width: 200px;
 }
 
 p.label {
@@ -59,9 +125,8 @@ p.label {
 }
 
 .left-column {
-    width: 80%;
-    padding-right: 35px;
-    padding-left: 35px;
+    width: 75%;
+    padding-right: 20px;
 }
 
 .category .section {

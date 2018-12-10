@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>{{title}} cv project</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="./ppic.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./fontawesome/css/fontawesome-all.css">
     <link rel="stylesheet" href="./index.css">
@@ -27,14 +27,14 @@
 
         <div class="top mt-2">
             <h2 class="m-0 heading">
-                <img src="./lucas_profile_pic.ico" class="rounded-circle float-left" style="width: 10rem;position: absolute;margin-right: 1rem;">
+                <img src="./ppic.png" class="rounded-circle float-left" style="width: 10rem;position: absolute;margin-right: 1rem;">
                 <span style="padding-left: 10rem;">Gysbert Lucas Olivier</span>
                 <p class="sub-heading">Software Craftsman
-                    <br/>
-                    <time datetime="" class="text-muted">Last update: Tue May 08 2018 20:46:54 GMT+0200 (South Africa Standard Time)</time>
-                    <br/> {{#if pdf}}
+                    <br />
+                    <time datetime="" class="text-muted">Last update: {{updated}}</time>
+                    <br /> {{#if pdf}}
                     <span class="print">The online version is available at
-                        <br/>
+                        <br />
                         <a href="http://LucasScript.github.io/my-cv-repo">
                             <i class="fab fa-github" aria-hidden="true"></i>http://LucasScript.github.io/my-cv-repo
                         </a>
@@ -48,7 +48,7 @@
                 </p>
             </h2>
         </div>
-        <div class="row">
+        <div class="d-flex">
             <div class="left-column">
 
                 <div class="category">
@@ -129,7 +129,7 @@
                     <p class="label uppercase">Languages</p>
                     {{#each languages}}
                     <div class="text-wrap label">{{ this.name }}</div>
-                    <progress value="{{this.rating}}" max="100"></progress>
+                    <div class="progressbar width-{{this.rating}}" ></div>
                     {{/each}}
                 </div>
                 <div class="section skills" style="padding-bottom: 15px;">
@@ -142,7 +142,7 @@
                     <p class="label uppercase">Tech</p>
                     {{#each tech}}
                     <div class="text-wrap label">{{ this.name }}</div>
-                    <progress value="{{this.rating}}" max="100"></progress>
+                    <div class="progressbar width-{{this.rating}}" ></div>
                     {{/each}}
                 </div>
                 <div class="section hobbies" style="padding-bottom: 15px;">

@@ -1,5 +1,7 @@
+const moment = require('moment');
+
 module.exports = {
-  updated: new Date(),
+  updated: moment().format('dddd Do MMMM YYYY'),
   title: 'Gysbert Lucas Olivier',
   description: 'Software craftsman',
   projectUrl: 'http://LucasScript.github.io/my-cv-repo',
@@ -46,11 +48,11 @@ module.exports = {
   ],
   skills: ['Team work', 'Communication'],
   tech: [
-    { name: 'Java, XML, SQL', rating: '65' },
-    { name: 'HTML, CSS, SCSS', rating: '85' },
-    { name: 'JavaScript, TypeScript', rating: '85' },
-    { name: 'Node.js, Angular.js', rating: '85' },
-    { name: 'Bootstrap', rating: '80' }
+    { name: 'Java, XML, SQL', rating: '50' },
+    { name: 'HTML, CSS, SCSS', rating: '75' },
+    { name: 'JavaScript, TypeScript', rating: '80' },
+    { name: 'Node.js, Angular.js', rating: '75' },
+    { name: 'Bootstrap', rating: '70' }
   ],
   hobbies: ['Cycling', 'Photography', 'Arduino Projects'],
   References: 'Available on request'
